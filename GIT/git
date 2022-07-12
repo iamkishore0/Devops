@@ -1,0 +1,119 @@
+GIT
+
+Git is a DevOps tool used for source code management. It is a free and open-source version control system used to handle small to very large projects efficiently. Git is used to tracking changes in the source code, enabling multiple developers to work together on non-linear development
+
+GIT Strategy
+
+
+
+Install GIT
+
+To install git in RHEL/Centos run the below command 
+
+sudo yum install git -y
+
+Check GIT version
+
+git - -version
+
+
+Create a git repository locally
+
+First create a directory for git & switch to that directory  mkdir git_practice && cd git_practice
+Create a local repository git init .
+Now check local repository files including hidden ls -a
+After executing ls -a, there you can see newly created .git directory 
+
+Steps to commit a file
+
+Go to git_practice directory & create a file touch f1
+Check status of git git status  
+Add that file to git git add f1
+Commit the file with commit message git commit -m <”commit message”> <”file name”>
+ (git commit -m “This is my first commit” f1)
+Check file commit details git log
+
+Now commit the second file “f2” > Follow the same process above.
+Execute git log to check number of commits
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interview question
+How many repositories in Git hub
+Local 2. Central
+
+How many repositories in Git
+Local 2. Central 3.Remote
+
+
+Create an account in github.com & create a repository 
+
+
+By default there’s a main branch & there’s no master branch in central repository
+
+
+Add repository 
+ git remote add origin <repository url>
+
+Check git branch 
+git branch
+
+Push files to git repo
+git push -u origin master
+(it will ask for username and password - don’t give password, provide token)
+
+
+
+
+GIT BRANCHES
+
+Check git branch 
+git branch
+
+Create a new branch 
+
+git branch <branch name>
+
+Switch to new branch
+
+git checkout <branch name>
+
+ Add files to new branch and commit those files
+
+git add <file name> && git commit -m <”commit message”> <file name>
+
+Push branch to GIT central repository
+
+git push -u origin master <branch name> 
+
+
+Shortcut method for creating a branch and switching to that branch
+
+git checkout -b <branch name>
+
+Change branch name
+
+git branch -m <old branch name> <new branch name>
+
+
+Clone a branch
+
+git clone -b <branch name> <repo url>
+
+Delete a branch 
+
+git branch -D <branch name>
+
+
+
+
