@@ -1,0 +1,45 @@
+Jenkins Installation
+
+Run the below highlighted commands to install Jenkins
+
+ sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+sudo yum upgrade
+
+sudo yum install java-11-openjdk
+
+sudo yum install jenkins
+
+sudo systemctl daemon-reload
+
+
+You can enable the Jenkins service to start at boot with the command:
+sudo systemctl enable jenkins
+
+You can start the Jenkins service with the command:
+sudo systemctl start jenkins
+
+You can check the status of the Jenkins service using the command:
+sudo systemctl status jenkins
+
+
+
+
+
+
+
+
+
+
+
+Accessing Jenkins user-interface
+Jenkins will run on port 8080, Make sure you enabled the 8080 port in AWS security groups.
+Access url for Jenkins will be <Public I.P>:8080 (example:  65.25.36.1:8080)
+ Accessing jenkins for first time it will prompt a page called “Unlock Jenkins”, we are required to provide administrator password 
+
+Administrator password will be available at server, where jenkins is installed, login to that server and execute the below command “cat /var/jenkins_home/secrets/initalAdminPasswd”
+Administrator password will be printed in putty/terminal, Copy that password paste in ‘Unlock jenkins’ page and click on “continue”
+And Follow the required steps to finish the steps…..
