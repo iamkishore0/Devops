@@ -1,0 +1,67 @@
+Terraform Installation in Centos/RHEL
+
+Login as root user
+
+Run the below highlighted commands to install terraform
+
+sudo yum update -y
+
+sudo yum install -y yum-utils
+
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+
+sudo yum -y install terraform
+
+
+Check Terraform Installation
+
+terraform -help
+
+
+
+Install AWS-CLI in Centos/RHEL
+
+Login as root user
+
+Run the below highlighted commands to install AWS-CLI
+
+yum install unzip -y 
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+unzip awscliv2.zip
+
+sudo ./aws/install
+
+
+
+Create & Configure AWS-IAM-USER details in Centos
+ 
+Follow the below instructions to create IAM-USER & Credentials
+
+Go to AWS console > Click on services(which is located in top left) 
+> Search for IAM in search tab > Click on IAM
+> Click on Users (Which is located in left side under Access Management)
+>Click on Add users (Which is located in top right side)
+>Give any username for username* and select Access key - Programmatic access and not required to select Password - AWS Management Console access and click on Next:Permissions.
+>Click on Attach existing policies directly option and select ‘AdministratorAccess’ which is under Policy name and click on Next: Tags
+>Click on Next: Review (here not required to give tags)
+>Click on Create user
+
+***Now Save your IAM-USER Credentials, Once page get refreshed, No way to access them again***
+
+
+Configure IAM_USER Credentials in Centos
+
+Login as root user
+
+Run the below highlighted commands to configure AWS-CLI for Terraform
+
+export AWS_ACCESS_KEY_ID= <IAM user username>
+
+export AWS_SECRET_ACCESS_KEY= <IAM user secret key>
+
+
+
+
+
