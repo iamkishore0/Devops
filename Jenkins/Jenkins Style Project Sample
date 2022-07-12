@@ -1,0 +1,31 @@
+Jenkins Pipeline - FreeStyle project
+
+Project-URL - https://github.com/wakaleo/game-of-life
+
+For this pipeline, two dependencies are required which are git and maven, kindly install these dependencies in the server where jenkins is installed > Login to putty server and execute these commands to install dependencies
+ “sudo yum install git -y && sudo yum install maven -y”
+
+
+Login to Jenkins: Jenkins will run on port 8080, To access jenkins use the following protocol <public i.p>:8080
+
+After logging in to the Jenkins server, on the top left click on “ + New Item “
+
+Fill the project name as “ my_first_project” under the “ Enter an item name “ ,select the first item as “ Freestyle project “ and click on “OK” which is at bottom
+
+Click on “ Source Code Management “ and select  “ git “ and provide the project URL and click on “ apply “ - “ save “ at bottom
+
+Now click on “Build Now” which is at top left
+
+It will clone the git project code to the jenkins server.
+
+Build with Maven
+
+From above step we have created a freestyle job and provided the git url to clone the project code to jenkins server
+
+Now build the “var” file with build automation tool called “maven”
+
+Go to Jenkins dashboard > There you can see the list of created jobs > Click on my_first_project > click on “configure” on the top left > click on Build Triggers > Click on Build at the bottom > click on Add build step and select invoke top level maven targets > Under Goals fill install and  click on “ apply “ - “ save “ at bottom
+
+Now click on “Build Now” which is at top left
+
+It will build your application with Maven 
