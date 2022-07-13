@@ -45,13 +45,13 @@ pipeline {
 
                  sh "${scannerHome}/bin/sonar-scanner \
 
-                  -Dsonar.login=4f5f75d150d6f256bb73805fea71bbbacaf8cd89 \
+                  -Dsonar.login=<sonarcloud_token> \
 
                   -Dsonar.host.url=https://sonarcloud.io \
 
-                  -Dsonar.organization=devopslife \
+                  -Dsonar.organization=<organization_name> \
 
-                  -Dsonar.projectKey=devopslifekey \
+                  -Dsonar.projectKey=<organization_key> \
 
                   -Dsonar.java.binaries=./ "
 
