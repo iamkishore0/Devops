@@ -1,0 +1,67 @@
+
+pipeline {
+
+    agent any
+
+    tools {
+
+        maven "mvn"
+
+    }
+
+    stages {
+
+        stage('Git_clone') {
+
+            steps {
+
+                git 'https://github.com/devopslife999/HelloWorld'
+
+            }
+
+        }
+
+        stage ('Build_with_Maven') {
+
+            steps {
+
+                sh 'mvn install'
+
+            }
+
+        }
+
+        stage('sonar_code_analysis') {
+
+            environment {
+
+                scannerHome = tool 'sonarqube'
+
+            }
+
+            steps {
+
+             withSonarQubeEnv('sonarqube'){
+
+                 sh "${scannerHome}/bin/sonar-scanner \
+
+                  -Dsonar.login=4f5f75d150d6f256bb73805fea71bbbacaf8cd89 \
+
+                  -Dsonar.host.url=https://sonarcloud.io \
+
+                  -Dsonar.organization=devopslife \
+
+                  -Dsonar.projectKey=devopslifekey \
+
+                  -Dsonar.java.binaries=./ "
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
