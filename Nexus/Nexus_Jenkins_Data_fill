@@ -1,0 +1,12 @@
+Nexus Version: NEXUS2
+Protocol: HTTP
+Nexus URL: <url of nexus>
+Credentials: <Nexus credentials>
+Group Id: <Any group ID>
+Version: $BUILD_ID
+Repository: <name of repository> example:gameoflife
+
+Select Artifacts
+Artifactid: $BUILD_TIMESTAMP
+Type: war
+File: <location of the war file> example:gameoflife-web/target/gameoflife.war
