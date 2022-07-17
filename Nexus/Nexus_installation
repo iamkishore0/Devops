@@ -1,0 +1,5 @@
+yum install wget -y && yum install unzip -y && yum install java -y && yum install git -y && yum install maven -y &&
+wget https://download.sonatype.com/nexus/oss/nexus-2.14.4-03-bundle.zip &&
+unzip nexus-2.14.4-03-bundle.zip
+vi nexus-2.14.4-03/bin/nexus (uncomment# then replace RUN_AS_USER=root)
+bash nexus-2.14.4-03/bin/nexus restart
