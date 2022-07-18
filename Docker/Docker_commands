@@ -1,0 +1,28 @@
+Check version
+ docker --version
+ 
+Pull centos image from docker hub
+ docker pull centos
+ 
+Check Pulled images
+ docker images
+ 
+Run a container from pulled image
+ docker run <image id> 
+ 
+Check all docker containers
+ docker ps -a
+ 
+Check only running docker containers
+ docker ps
+ 
+Go inside the docker container 
+ docker exec -it <container id> /bin/bash
+ 
+Restart docker containers 
+ docker restart <container name>
+ 
+remove docker container
+ docker rm <container id>
+
+remove running docker 
