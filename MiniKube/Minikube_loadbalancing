@@ -1,0 +1,6 @@
+1. Deploy load balancing applications & expose to 8080 port
+ "kubectl create deployment balanced --image=k8s.gcr.io/echoserver:1.4 &&
+  kubectl expose deployment balanced --type=LoadBalancer --port=8080"
+  
+2.Find routable I.P
+  "kubectl get services balanced"
