@@ -1,3 +1,9 @@
+Pre-Requisites
+Docker
+
+Note:
+Don't do the below process as a root user, Root user will give erro
+
 1. Install Kubectl 
    https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
  
