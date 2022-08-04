@@ -8,8 +8,7 @@ Don't do the below process as a root user, Root user will give erro
    https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
  
 2. Install Minikube, run below command to run minikube
-   "curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &&
-    sudo install minikube-linux-amd64 /usr/local/bin/minikube"
+   "curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && sudo install minikube-linux-amd64 /usr/local/bin/minikube && sudo usermod -aG docker $USER && newgrp docker"
       
 3. Start minikube cluster
    "minikube start"
