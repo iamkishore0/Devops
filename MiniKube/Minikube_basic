@@ -1,0 +1,29 @@
+1. Install Kubectl 
+   https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+ 
+2. Install Minikube, run below command to run minikube
+   "curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &&
+    sudo install minikube-linux-amd64 /usr/local/bin/minikube"
+      
+3. Start minikube cluster
+   "minikube start"
+    
+4.Interact with minikube cluster
+  "kubectl get po -A"
+  
+5.Deploy applications
+  "kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4 &&
+   kubectl expose deployment hello-minikube --type=NodePort --port=8080"
+   
+6.Get services
+  "kubectl get services hello-minikube"
+  
+7.Port forward services from 8080 to 7080
+  "kubectl port-forward service/hello-minikube 7080:8080"
+  
+8.Access your deployed application 
+  "localhost:7080 or <public ip>:8080"
+  
+9.Delete minikube cluster
+  "minikube delete --all"
+  
