@@ -1,0 +1,22 @@
+1. Create a new IAM role for EKS to use
+
+2. Install the awscli 
+   https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+ 
+3. Install kubectl
+   https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+ 
+4. Create your EKS cluster with the AWS CLI
+  Command for cluster creation
+    "eksctl create cluster \
+    --name my-cluster \
+    --region eu-central-1 \
+    --nodegroup-name my-nodes \
+    --node-type t2.micro \
+    --nodes 2"
+ 
+5.View list of nodes
+  command "kubectl get nodes"
+  
+6.Delete cluster
+  command "eksctl delete cluster –name my-cluster"
