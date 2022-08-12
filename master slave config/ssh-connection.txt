@@ -1,0 +1,15 @@
+master                                         slave
+
+
+
+ssh-keygen                                     adduser slave
+generating ssh keys                            passwd slave
+#cd ./ssh                                      visudo
+                                               under root slave details
+
+ssh-copy-id username@slavepvtip                slave ALL=(ALL)  NOPASSWD: ALL
+
+scp f1 username@slavepvtip:                     vi /etc/ssh/sshd_config
+                                               passwordAuthentication yes
+                                               service sshd restart
+                                               su - slave
